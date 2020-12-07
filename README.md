@@ -5,7 +5,7 @@ Welcome to Cat Breeds!
 Here you will be able to select a cat breed and learn all the details you need to know about it! 
 Select a cat breed from the list by entering its breed name. 
 Once you've selected your breed, you will be able to see all the details & learn more about that breed. 
-You are able to enter exit at time to close out of the CLI.
+You are able to enter exit at any time to close out of the CLI.
 
 ## Usage
 
