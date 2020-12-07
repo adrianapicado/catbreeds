@@ -58,6 +58,7 @@ class CLI
          c.each do |c|
          puts "Name: #{c.name}"
          puts "Origin: #{c.origin}"
+         puts "Temperament #{c.temperament}"
          puts "Description: #{c.description}"
           puts "Life Span: #{c.life_span}"
           puts "Affection Level: #{c.affection_level}"

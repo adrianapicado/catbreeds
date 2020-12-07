@@ -1,6 +1,6 @@
 class CatBreeds
 
-attr_accessor :name, :origin, :description, :life_span, :affection_level, :shedding_level, :intelligence
+attr_accessor :name, :origin, :temperament, :description, :life_span, :affection_level, :shedding_level, :intelligence
 
 @@all = []
 
