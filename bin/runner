@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby 
+
+require_relative '../config/environment'
+
+
+
+#API.get_data
+
+#binding.pry
+
+
+
+CLI.new.call.run
+
+
+
+
+
+
+
