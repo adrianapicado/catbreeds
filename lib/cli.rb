@@ -1,8 +1,25 @@
 class CLI
-
        def call
+    puts <<-'EOF'
+
+    ~~~~~~~~~~~~~~~~~~~~~~~~ * C A T  B R E E D S * ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                         /^--^\     /^--^\     /^--^\
+                         \____/     \____/     \____/
+                        /      \   /      \   /      \
+                       |        | |        | |        |
+                        \__  __/   \__  __/   \__  __/
+   |^|^|^|^|^|^|^|^|^|^|^|^\ \^|^|^|^/ /^|^|^|^|^\ \^|^|^|^|^|^|^|^|^|^|^|^|
+   | | | | | | | | | | | | |\ \| | |/ /| | | | | | \ \ | | | | | | | | | | |
+   #########################/ /######\ \###########/ /#######################
+   || | | | | | | | | | | | \/| | | | \/| | | | | |\/ | | | | | | | | | | | |
+   |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_||
+    EOF
+          puts ""
           puts "Welcome User!"
+          puts ""
           puts "To navigate cat breeds, enter 'cats'"
+          puts ""
           puts "To exit, enter 'exit'"
           API.get_data
           #binding.pry
@@ -30,7 +47,7 @@ class CLI
         puts ""
         puts ""
         puts "Which cat breed are you interested in?"
-        input = gets.strip.capitalize
+        input = gets.strip.downcase
 
         breeds_selection(input)
         end
