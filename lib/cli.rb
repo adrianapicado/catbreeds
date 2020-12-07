@@ -27,19 +27,19 @@ class CLI
           
          end
 
-      def menu 
-      input = gets.strip.downcase
-    
-        if input == "cats"
-         breeds_list
-         menu
-         elsif input == "exit"
-         bye_bye
-         else 
-         not_an_option
-         end
+       def menu 
+         input = gets.strip.downcase
+        
+          if input == "cats"
+          breeds_list
+          menu
+          elsif input == "exit"
+          bye_bye
+          else 
+          not_an_option
+          end
         end
-    
+
       def breeds_list
         CatBreeds.all.each_with_index do |breed, index|
             puts "#{index +1}. #{breed.name}"
@@ -48,7 +48,6 @@ class CLI
         puts ""
         puts "Which cat breed are you interested in?"
         input = gets.strip.downcase
-
         breeds_selection(input)
         end
     
@@ -71,10 +70,21 @@ class CLI
     
     
      def bye_bye
+     puts ""
      puts "Goodbye, hope to see you back soon"
-     end
+     puts ""
+     puts <<-'EOF'        
+                             /)
+                    /\___/\ ((
+                    \`@_@'/  ))
+                    {_:Y:.}_//
+         ----------{_}^-'{_}----------
+
+    EOF
+ puts ""
+ end
     
-     def not_an_option
+      def not_an_option
          puts "Not an option, please try again"
          menu
         end
