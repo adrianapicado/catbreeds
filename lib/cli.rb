@@ -18,7 +18,7 @@ class CLI
           puts ""
           puts "Welcome User!"
           puts ""
-          puts "To navigate cat breeds, enter 'cats'"
+          puts "To navigate cat breeds, enter 'meow'"
           puts ""
           puts "To exit, enter 'exit'"
           API.get_data
@@ -30,7 +30,7 @@ class CLI
        def menu 
          input = gets.strip.downcase
         
-          if input == "cats"
+          if input == "meow"
           breeds_list
           menu
           elsif input == "exit"
@@ -71,7 +71,7 @@ class CLI
     
      def bye_bye
      puts ""
-     puts "Goodbye, hope to see you back soon"
+     puts "Goodbye, hope to see you back soon! "
      puts ""
      puts <<-'EOF'        
                              /)
