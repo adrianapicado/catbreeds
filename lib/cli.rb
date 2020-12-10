@@ -85,18 +85,25 @@ EOF
     c.each do |c|
     puts "Name: #{c.name}"
     sleep(1)
+    puts ""
     puts "Origin: #{c.origin}"
     sleep(1) 
+    puts ""
     puts "Temperament #{c.temperament}"
     sleep(1)
+    puts ""
     puts "Description: #{c.description}"
     sleep(1)
+    puts ""
     puts "Life Span: #{c.life_span}"
     sleep(1)
+    puts ""
     puts "Affection Level: #{c.affection_level}"
     sleep(1)
+    puts ""
     puts "Shedding Level: #{c.shedding_level}"
     sleep(1)
+    puts ""
     puts "Intelligence: #{c.intelligence}"
     sleep(1)
 
