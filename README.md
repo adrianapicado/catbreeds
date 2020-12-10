@@ -12,7 +12,7 @@ You are able to enter exit at any time to close out of the CLI.
 
 ## Usage
 
-Execute the bin file './bin/runner'.
+Execute the bin file './bin/runner'. 
 
 ## Development
 

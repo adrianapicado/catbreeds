@@ -22,7 +22,7 @@ def initialize(hash)
 
    def self.find_by_name(name)
       self.all.select do |breed|
-           breed.name.downcase! == name
+           breed.name.downcase == name
        end
    end
 end

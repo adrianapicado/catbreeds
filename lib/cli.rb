@@ -39,20 +39,15 @@ EOF
      if input == "cats"
      breeds_list
      continue
-     menu
+     #menu
      elsif input == "exit"
      bye_bye
      else 
      not_an_option
+     continue
+     menu
      end
    end
-
-  #  def repeat
-  #   until input == exit 
-  #     breeds_list
-  #     menu
-  #     end
-  #   end
 
   def continue 
     puts ""
@@ -60,17 +55,13 @@ EOF
     second_input = gets.strip.downcase
     if second_input == "y"
       breeds_list
-      menu
+      continue
     elsif second_input == "n"
       bye_bye
     else
       not_an_option
-
     end
   end
-
-
-
 
  def breeds_list
    CatBreeds.all.each_with_index do |breed, index|
@@ -81,10 +72,11 @@ EOF
    puts "Which cat breed are you interested in?"
    input = gets.strip.downcase
    breeds_selection(input)
+   #binding.pry
    end
 
   def breeds_selection(breed)
-    #puts "#{breed}"
+  
     c = CatBreeds.find_by_name(breed)
     c.each do |c|
     puts "Name: #{c.name}"
@@ -95,11 +87,16 @@ EOF
      puts "Affection Level: #{c.affection_level}"
      puts "Shedding Level: #{c.shedding_level}"
      puts "Intelligence: #{c.intelligence}"
+     
     end
 
     #binding.pry
    end
 
+   def not_an_option
+    puts "Not an option, please try again"
+    menu
+   end
 
 def bye_bye
 puts ""
@@ -114,13 +111,7 @@ puts <<-'EOF'
 EOF
 puts ""
 exit 
-end
-
- def not_an_option
-    puts "Not an option, please try again"
-    menu
-   end
-
+  end
 end
     
   
