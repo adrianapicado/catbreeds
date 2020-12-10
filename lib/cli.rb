@@ -41,7 +41,6 @@ EOF
      if input == "cats"
      breeds_list
      continue
-     #menu
      elsif input == "exit"
      bye_bye
      else 
@@ -116,12 +115,6 @@ EOF
     sleep(1)
     continue
    end
-
-  #  def error
-  #   puts "Oops, that's not an option! Please check your spelling"
-  #   sleep(3)
-  #   breeds_list
-  #  end
 
 
 def bye_bye
