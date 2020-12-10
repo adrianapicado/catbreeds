@@ -112,12 +112,12 @@ EOF
     #binding.pry
   end
 
-   def not_an_option
+   def not_an_option #built for the menu method
     puts "Oops, that's not an option! Please try again."
     menu
    end
 
-   def error
+   def error #built for the continue method
     puts "Oops, that's not an option! Please try again."
     sleep(1)
     continue
