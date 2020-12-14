@@ -70,7 +70,7 @@ EOF
    end
    puts ""
    puts ""
-   puts "Which cat breed are you interested in?"
+   puts "Please enter the name of the cat breed you interested in"
    input = gets.strip.downcase
    breeds_selection(input)
   
