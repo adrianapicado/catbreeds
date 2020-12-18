@@ -30,27 +30,27 @@ EOF
      puts ""
      puts "To exit, enter 'exit'"
      puts ""
-     API.get_data
+     API.get_data 
      #binding.pry
      menu
      
     end
 
-  def menu 
-    input = gets.strip.downcase
+  def menu #takes in users input to store it & use it.
+    input = gets.strip.downcase 
    
-     if input == "cats"
+     if input == "cats" 
      breeds_list
      continue
      elsif input == "exit"
      bye_bye
      else 
      not_an_option
-     menu
+     menu #this is called recursion using the method inside of itself. 
      end
    end
 
-  def continue 
+  def continue                              #allows user to continue discovering more breeds. 
     puts ""
     puts "Would you like to continue (y/n)"
     second_input = gets.strip.downcase
@@ -61,6 +61,7 @@ EOF
       bye_bye
     else
       error
+      continue
     end
   end
 
@@ -82,30 +83,30 @@ EOF
 
   def breeds_selection(breed)
   
-    c = CatBreeds.find_by_name(breed)
-    c.each do |c|
-    puts "Name: #{c.name}"
+    cb = CatBreeds.find_by_name(breed)
+    cb.each do |cb|                     #iterate over array received & list out attributes selected.
+    puts "Name: #{cb.name}"
     sleep(1)
     puts ""
-    puts "Origin: #{c.origin}"
+    puts "Origin: #{cb.origin}"
     sleep(1) 
     puts ""
-    puts "Temperament #{c.temperament}"
+    puts "Temperament #{cb.temperament}"
     sleep(1)
     puts ""
-    puts "Description: #{c.description}"
+    puts "Description: #{cb.description}"
     sleep(1)
     puts ""
-    puts "Life Span: #{c.life_span}"
+    puts "Life Span: #{cb.life_span}"
     sleep(1)
     puts ""
-    puts "Affection Level: #{c.affection_level}"
+    puts "Affection Level: #{cb.affection_level}"
     sleep(1)
     puts ""
-    puts "Shedding Level: #{c.shedding_level}"
+    puts "Shedding Level: #{cb.shedding_level}"
     sleep(1)
     puts ""
-    puts "Intelligence: #{c.intelligence}"
+    puts "Intelligence: #{cb.intelligence}"
     sleep(1)
 
     end
@@ -119,7 +120,7 @@ EOF
    end
 
    def error #built for the continue method
-    puts "Oops, that's not an option! Please try again."
+    puts "Oops, that's not an option!"
     sleep(1)
     continue
    end

@@ -5,8 +5,8 @@ attr_accessor :name, :origin, :temperament, :description, :life_span, :affection
 @@all = []
 
 def initialize(hash)
-    hash.each do |k,v|
-      self.send(("#{k}="), v) if self.respond_to?("#{k}=")
+    hash.each do |k,v|                                     #initialized using mass assignments 
+      self.send(("#{k}="), v) if self.respond_to?("#{k}=") #used send method to create instance variables
       #binding.pry
      end
      save
@@ -20,7 +20,7 @@ def initialize(hash)
         @@all
     end
 
-   def self.find_by_name(name)
+   def self.find_by_name(name)    #this class method takes in name, seraches @@all array & selects breed which name matches name passed in. 
       self.all.select do |breed|
            breed.name.downcase == name
        end
