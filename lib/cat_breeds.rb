@@ -13,7 +13,7 @@ def initialize(hash)
   end
   
     def save
-        @@all << self
+        self.class.all << self
     end
 
     def self.all
@@ -21,7 +21,7 @@ def initialize(hash)
     end
 
    def self.find_by_name(name)    #this class method takes in name, seraches @@all array & selects breed which name matches name passed in. 
-      self.all.select do |breed|
+      self.all.detect do |breed|
            breed.name.downcase == name
        end
    end

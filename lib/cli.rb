@@ -66,16 +66,23 @@ EOF
   end
 
  def breeds_list
+   names = []
    CatBreeds.all.each_with_index do |breed, index|
        puts "#{index +1}. #{breed.name}"
+       names << breed.name.downcase
    end
    puts ""
    puts ""
    puts "Please enter the name of the cat breed you interested in"
    input = gets.strip.downcase
-   breeds_selection(input)
-  
+   if names.include?(input)
+     breeds_selection(input)
+   else 
+    puts "Please check you spelling & try again"
+    sleep(1)
+    breeds_list
    end
+  end
 
    #binding.pry
 
@@ -84,7 +91,7 @@ EOF
   def breeds_selection(breed)
   
     cb = CatBreeds.find_by_name(breed)
-    cb.each do |cb|                     #iterate over array received & list out attributes selected.
+    #cb.each do |cb|                     #iterate over array received & list out attributes selected.
     puts "Name: #{cb.name}"
     sleep(1)
     puts ""
@@ -109,10 +116,10 @@ EOF
     puts "Intelligence: #{cb.intelligence}"
     sleep(1)
 
-    end
+  end
 
     #binding.pry
-  end
+  
 
    def not_an_option #built for the menu method
     puts "Oops, that's not an option! Please try again."
