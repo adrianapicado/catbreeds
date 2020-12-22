@@ -36,7 +36,7 @@ EOF
      
     end
 
-  def menu #takes in users input to store it & use it.
+  def menu 
     input = gets.strip.downcase 
    
      if input == "cats" 
@@ -46,11 +46,11 @@ EOF
      bye_bye
      else 
      not_an_option
-     menu #this is called recursion using the method inside of itself. 
+     menu
      end
    end
 
-  def continue                              #allows user to continue discovering more breeds. 
+  def continue                             
     puts ""
     puts "Would you like to continue (y/n)"
     second_input = gets.strip.downcase
@@ -91,7 +91,7 @@ EOF
   def breeds_selection(breed)
   
     cb = CatBreeds.find_by_name(breed)
-    #cb.each do |cb|                     #iterate over array received & list out attributes selected.
+    #cb.each do |cb|                    
     puts "Name: #{cb.name}"
     sleep(1)
     puts ""
@@ -121,12 +121,12 @@ EOF
     #binding.pry
   
 
-   def not_an_option #built for the menu method
+   def not_an_option 
     puts "Oops, that's not an option! Please try again."
     menu
    end
 
-   def error #built for the continue method
+   def error 
     puts "Oops, that's not an option!"
     sleep(1)
     continue
