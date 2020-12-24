@@ -31,7 +31,7 @@ EOF
      puts "To exit, enter 'exit'"
      puts ""
      API.get_data 
-     #binding.pry
+     binding.pry
      menu
      
     end

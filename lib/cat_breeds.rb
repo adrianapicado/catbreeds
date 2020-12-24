@@ -25,7 +25,29 @@ def initialize(hash)
            breed.name.downcase == name
        end
    end
-end
 
+   def self.unaffectionate_cats 
+     CatBreeds.all.select do |breed|
+       breed.affection_level < 5 
+    end 
+   end
+
+   def self.uk_origin
+    #this method will return all of the cat breeds who have an origin of United Kingdon
+    CatBreeds.all.select do |breed|
+      breed.origin == "United Kingdom"
+    end
+   end
+
+   def self.by_origin(origin)
+        #this method will return all of the cat breeds who have an origin that is passed in as an argument
+        # CatBreeds.by_origin("United States")
+        CatBreeds.all.select do |breed|
+         breed.origin == "#{origin}"
+        end
+        
+   end
+
+end
 
 
